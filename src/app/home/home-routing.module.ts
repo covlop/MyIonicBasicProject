@@ -6,6 +6,27 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+     children: [
+      {
+        path: 'perfil',
+        loadComponent: () => import('../perfil/perfil.page').then(m => m.PerfilPage)
+      },
+      {
+        path: 'ajustes',
+        loadComponent: () => import('../ajustes/ajustes.page').then(m => m.AjustesPage)
+      },
+      {
+        path: 'inicio',
+        loadComponent: () => import('../inicio/inicio.page').then(m => m.InicioPage)
+      },
+      {
+        path: '',
+        redirectTo: 'perfil',
+        pathMatch: 'full'
+      }
+    ]
+
+
   }
 ];
 
