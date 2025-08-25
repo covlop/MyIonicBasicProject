@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HomePage } from '../home/home.page';
-import { PerfilPage } from '../perfil/perfil.page';
 import {RouterModule} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -14,8 +12,7 @@ import { IonicModule } from '@ionic/angular';
    imports: [
     CommonModule,
     IonicModule,
-    RouterModule,
-    PerfilPage
+    RouterModule
   ],
 
 })

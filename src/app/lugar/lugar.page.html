@@ -1,18 +1,51 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title size="large">{{placeName || 'Lugar desconocido'}}</ion-title>
+    <ion-title size="large">{{nombre || 'Nombre desconocido'}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{placeName || 'Lugar desconocido'}}</ion-title>
+      <ion-title size="large">{{nombre || 'Nombre desconocido'}}</ion-title>
     </ion-toolbar>
   </ion-header>
     <div id="container">
-         <p>{{placeName}}</p> 
+        <ion-list>
+              <ion-item>
+                <ion-label position="floating">Nombre</ion-label>
+                <ion-input 
+                type="text" [(ngModel)]="lugar.nombre"
+                placeholder="Escribe un nombre..."
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Direccion</ion-label>
+                <ion-input 
+                type="text" [(ngModel)]="lugar.direccion"
+                placeholder="Escribe una direccion..."
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label for="categoriaSelect">Categoria</ion-label>
+                <ion-select id="categoriaSelect" [(ngModel)]="lugar.categoria" >
+                    <ion-select-option value="AireLibre" class="highlighted">Aire Libre</ion-select-option>
+                    <ion-select-option value="LugarCerrado" class="highlighted">Lugar Cerrado</ion-select-option>
+                </ion-select>
+              </ion-item>
+        </ion-list>
+        <ion-item>
+          <ion-label position="floating"> Descripcion</ion-label>
+          <ion-textarea
+             [(ngModel)]="lugar.descripcion"
+             placeholder="Escribe una descripción..."
+             rows="6"
+          ></ion-textarea>
+        </ion-item>
+             <ion-button (click)="navigateBack()">Back</ion-button> 
+             <ion-button (click)="navigateSubplace()">Subplace</ion-button> 
+              <ion-button (click)="guardarLugar()" full>Guardar Nota</ion-button> 
+
     </div>
-   
 
 </ion-content>

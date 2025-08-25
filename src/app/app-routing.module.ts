@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'lugar',
     loadComponent: () => import('./lugar/lugar.page').then(m => m.LugarPage)
+  },
+  {
+    path: 'subplace',
+    loadChildren: () => import('./sublugar/sublugar.module').then( m => m.SublugarPageModule)
   }
 
 ];

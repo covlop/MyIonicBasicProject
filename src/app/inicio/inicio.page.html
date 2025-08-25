@@ -17,6 +17,23 @@
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
     <ion-button (click)="navegarLugar('Navegar a primer lugar')">Move to page Lugar 1</ion-button> 
     <ion-button (click)="navegarLugar('Navegar a segundo lugar')">Move to page Lugar 2</ion-button>
+    <ion-button color="light" >Light</ion-button>
+    <ion-button color="secondary" >Secondary</ion-button>
+    <ion-button color="tertiary" >Purple</ion-button>
+    <ion-button color="warning" >Favorito</ion-button>
+
+    <ion-list>
+        <ion-item *ngFor="let lugar of lugares" (click)="irAVistaDeDetalleExistente(lugar)">
+            <p>{{lugar.nombre}}<br>
+            {{lugar.direccion}}<br>
+           {{lugar.categoria}}<br>
+          {{lugar.descripcion}}</p>
+        </ion-item>
+    </ion-list>
+
+    <ion-fab  bottom right>
+        <ion-fab-button color="primary" ion-fab (click)="irAVistaDeDetalle()">+</ion-fab-button>
+    </ion-fab>    
 
   </div>   
 
