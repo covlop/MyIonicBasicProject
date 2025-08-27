@@ -23,12 +23,21 @@
     <ion-button color="warning" >Favorito</ion-button>
 
     <ion-list>
-        <ion-item *ngFor="let lugar of lugares" (click)="irAVistaDeDetalleExistente(lugar)">
+      <ion-item-sliding *ngFor="let lugar of lugares; let i=index">
+        <ion-item (click)="irAVistaDeDetalleExistente(lugar)">
             <p>{{lugar.nombre}}<br>
             {{lugar.direccion}}<br>
            {{lugar.categoria}}<br>
           {{lugar.descripcion}}</p>
         </ion-item>
+
+        <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="borrarLugar(i)">
+             <ion-icon name="trash-outline" style="font-size: 32px;"></ion-icon>
+            </ion-item-option>
+        </ion-item-options>
+
+        </ion-item-sliding>
     </ion-list>
 
     <ion-fab  bottom right>

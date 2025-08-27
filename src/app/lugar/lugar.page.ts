@@ -61,6 +61,7 @@ export class LugarPage {
     }
     console.log(this.lugar);
     this.lugaresService.addLugar(this.lugar);
+    alert('Guardado con exito.');
     this.location.back()
   }
 }

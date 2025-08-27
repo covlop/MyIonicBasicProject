@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'subplace',
     loadChildren: () => import('./sublugar/sublugar.module').then( m => m.SublugarPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 
 ];
